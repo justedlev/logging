@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<included>
+    <property name="SQL_LOG_FILE" value="${SQL_LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/sql.log}"/>
+    <property name="SQL_LOG_FILE_PATTERN" value="${SQL_LOG_FILE_PATTERN:-${FILE_LOG_PATTERN}}"/>
+    <appender name="SQL_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${SQL_LOG_FILE_PATTERN}</pattern>
+        </encoder>
+        <file>${SQL_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <cleanHistoryOnStart>false</cleanHistoryOnStart>
+            <fileNamePattern>${SQL_LOG_FILE}.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>7</maxHistory>
+            <totalSizeCap>0</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+</included>
