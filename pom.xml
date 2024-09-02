@@ -7,10 +7,36 @@
     <groupId>io.github.justedlev.commons</groupId>
     <artifactId>logging</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <name>Logging</name>
+    <url>https://github.com/justedlev/logging</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>justedlev</id>
+            <name>Edward L.</name>
+            <email>jvstedlev@gmail.com</email>
+            <url>https://github.com/justedlev</url>
+        </developer>
+    </developers>
 
     <properties>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Mvn Repository</name>
+            <url>https://maven.pkg.github.com/justedlev/${project.artifactId}</url>
+        </repository>
+    </distributionManagement>
 
 </project>
