@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+    <property name="LOG_EXCEPTION_CONVERSION_WORD" value="${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    <property name="PID" value="${PID:- }"/>
+    <property name="LOG_LEVEL_PATTERN" value="${LOG_LEVEL_PATTERN:-%5p}"/>
+    <property name="LOG_DATEFORMAT_PATTERN" value="${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}"/>
+    <property name="CONSOLE_LOG_PATTERN"
+              value="${CONSOLE_LOG_PATTERN:-%clr(%d{${LOG_DATEFORMAT_PATTERN}}){faint} %clr(${LOG_LEVEL_PATTERN}) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD}}"/>
+    <property name="FILE_LOG_PATTERN"
+              value="${FILE_LOG_PATTERN:-%d{${LOG_DATEFORMAT_PATTERN}} ${LOG_LEVEL_PATTERN} ${PID} --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD}}"/>
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>
+    <property name="DEBUG_LOG_FILE"
+              value="${DEBUG_LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/debug.log}"/>
+    <property name="DEBUG_LOG_FILE_PATTERN" value="${DEBUG_LOG_FILE_PATTERN:-${FILE_LOG_PATTERN}}"/>
+</included>

@@ -3,9 +3,6 @@
 <!-- File appender of DEBUG level logback configuration provided for import -->
 
 <included>
-    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
-    <property name="DEBUG_LOG_FILE" value="${DEBUG_LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/debug.log}"/>
-    <property name="DEBUG_LOG_FILE_PATTERN" value="${DEBUG_LOG_FILE_PATTERN:-${FILE_LOG_PATTERN}}"/>
     <appender name="DEBUG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
             <pattern>${DEBUG_LOG_FILE_PATTERN}</pattern>
