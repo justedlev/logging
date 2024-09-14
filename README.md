@@ -13,13 +13,9 @@
 
 ## 📋 About
 
----
-
 Logging configurations for Java
 
 ## 🧾 Example
-
----
 
 ### Logback
 
