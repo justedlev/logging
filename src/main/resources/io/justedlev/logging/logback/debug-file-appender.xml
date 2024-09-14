@@ -4,22 +4,20 @@
 
 <included>
     <appender name="DEBUG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
         <encoder>
             <pattern>${DEBUG_LOG_FILE_PATTERN}</pattern>
+            <charset>${FILE_LOG_CHARSET}</charset>
         </encoder>
         <file>${DEBUG_LOG_FILE}</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <cleanHistoryOnStart>${DEBUG_LOG_FILE_CLEAN_HISTORY_ON_START:-false}</cleanHistoryOnStart>
-            <fileNamePattern>${DEBUG_ROLLING_FILE_NAME_PATTERN:-${DEBUG_LOG_FILE}.%d{yyyy-MM-dd}.%i.gz}
-            </fileNamePattern>
-            <maxFileSize>${DEBUG_LOG_FILE_MAX_SIZE:-200MB}</maxFileSize>
-            <maxHistory>${DEBUG_LOG_FILE_MAX_HISTORY:-7}</maxHistory>
-            <totalSizeCap>${DEBUG_LOG_FILE_TOTAL_SIZE_CAP:-0}</totalSizeCap>
+            <fileNamePattern>${LOGBACK_ROLLINGPOLICY_DEBUG_FILE_NAME_PATTERN:-${DEBUG_LOG_FILE}.%d{yyyy-MM-dd}.%i.gz}</fileNamePattern>
+            <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-false}</cleanHistoryOnStart>
+            <maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_DEBUG_FILE_SIZE:-25MB}</maxFileSize>
+            <totalSizeCap>${LOGBACK_ROLLINGPOLICY_DEBUG_TOTAL_SIZE_CAP:-0}</totalSizeCap>
+            <maxHistory>${LOGBACK_ROLLINGPOLICY_DEBUG_MAX_HISTORY:-7}</maxHistory>
         </rollingPolicy>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>DEBUG</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
     </appender>
 </included>
